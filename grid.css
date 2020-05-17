@@ -1,0 +1,73 @@
+body {
+	padding: 0px;
+	margin: 0px;
+}
+
+#current {
+	visibility: hidden;
+}
+
+#current:after {
+	visibility: visible;
+	content: "Desktop (fixed columns)";
+	display: block;
+	text-align: center;
+	font-family: sans-serif;
+	color: #245589;
+	font-size: 32px;
+
+}
+
+#grid {
+	max-width: 1040px;
+	margin: 0px auto;
+	display: grid;
+	grid-template-columns: repeat(12, 1fr);
+	grid-gap: 16px;
+	padding: 0px 72px;
+	background-color: #E0EEFF;
+}
+
+div.column {
+	height: 400px;
+	background-color: #0001;
+	grid-column: span 1;
+}
+
+
+@media (max-width: 1184px) {
+	#grid {
+		background-color: #E3FFF8;
+	}
+	#current:after {
+		content: "Desktop (fluid columns)";
+		color: #248967;
+}
+}
+
+@media (max-width: 880px) {
+	#grid {
+		grid-template-columns: repeat(6, 1fr);
+		grid-gap: 16px;
+		background-color: #FFFEEA;
+		padding: 0px 40px;
+}
+	#current:after {
+		content: "Tablet";
+		color: #896924;
+}
+}
+
+@media (max-width: 580px) {
+	#grid {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		grid-gap: 16px;
+		padding: 0px 20px;
+		background-color: #FFDFDF;
+	}
+	#current:after {
+		content: "Mobile";
+		color: #892424;
+}
+}
